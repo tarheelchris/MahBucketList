@@ -1,4 +1,4 @@
-<h1><%= User.first_name %>'s Bucket List</h1>
+<h1><%#= User.first_name %>'s Bucket List</h1>
 
 <table>
   <tr>
@@ -23,5 +23,6 @@
 </table>
 
 <br />
-
-<%= link_to 'New Item', new_item_path %>
+<% if session[:uid].present? %>
+	<%= link_to 'New Item', new_item_path %>
+<% end %>
