@@ -11,8 +11,10 @@
 </p>
 
 <p>
-  <b>List:</b>
-  <%= @item.list_id %>
+  <b>Status:</b>
+	<%= if @item.complete %>
+	<p>True</p>
+	<%= else %>
 </p>
 
 
