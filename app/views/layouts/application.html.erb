@@ -12,7 +12,7 @@
 <nav>
 	<ul>
 		<% if session[:uid].present? %>
-		<li>
+		<li >
 			<%= link_to "View Profile", user_url(User.find_by_id(session[:uid])) %>	
 		</li>
 		<li>
