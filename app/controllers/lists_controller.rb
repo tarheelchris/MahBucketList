@@ -43,7 +43,7 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.save
-        format.html { redirect_to @list, notice: 'List was successfully created.' }
+        format.html { redirect_to new_item_url(:list_id => @list.id), notice: 'List was successfully created.' }
         format.json { render json: @list, status: :created, location: @list }
       else
         format.html { render action: "new" }

@@ -11,15 +11,15 @@
 <h1><%= link_to "My Bucket List", root_url %></h1>
 <nav>
 	<ul>
-		<% if session[:uid].present? %>
+		<% if @current_user %>
 		<li id="nav">
-			<%= link_to "View Profile", user_url(User.find_by_id(session[:uid])) %>	
+			<%= link_to "View Profile", user_url(@current_user) %>	
 		</li>
 		<li id="nav">
 			<%= link_to "Sign Out", sign_out_url %>
 		</li>
 		<% else  %>
-			<li id="nav"><%= link_to "Sign In", new_sessions_url %></li>
+			<li id="nav"><%= link_to "Sign In", new_session_url %></li>
 			<li id="nav"><%= link_to "Sign Up", new_user_url %></li>
 		<% end %>
 		<li id="nav"><a href="#">Team</a></li>

@@ -21,13 +21,6 @@ ActiveRecord::Schema.define(:version => 20120609032411) do
     t.boolean  "complete"
   end
 
-  create_table "list_item", :force => true do |t|
-    t.integer  "item_id"
-    t.integer  "list_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "list_items", :force => true do |t|
     t.integer  "item_id"
     t.integer  "list_id"

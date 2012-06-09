@@ -12,7 +12,7 @@ if Rails.env.development?
   # User.create first_name: "Paul", last_name: "Wu", email: 'paul@codeacademy.org', password: 'hockey', list_id:2
   # User.create first_name: "Chris", last_name: "Liang", email: 'chris@codeacademy.org', password: 'hockey', list_id:3
   
-  l = List.create title: "#{u.first_name}/'s Bucket List", user_id: u.id
+  l = List.create title: "#{u.first_name}\'s Bucket List", user_id: u.id
 
   li = ListItem.create list_id: l.id, item_id: i.id
   

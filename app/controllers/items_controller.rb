@@ -24,8 +24,8 @@ class ItemsController < ApplicationController
   # GET /items/new
   # GET /items/new.json
   def new
-    @item = Item.new
-
+    @list = List.find(params[:list_id])
+    @item = @list.items.new
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @item }
