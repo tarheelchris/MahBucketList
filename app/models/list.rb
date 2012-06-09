@@ -1,8 +1,8 @@
 class List < ActiveRecord::Base
-  attr_accessible :item_id, :title, :user_id
+  attr_accessible :title, :user_id
   
   belongs_to :user
-  has_many :lists_items
-  has_many :items, :through => :lists_items
+  has_many :list_item
+  has_many :items, :through => :list_item
   
 end

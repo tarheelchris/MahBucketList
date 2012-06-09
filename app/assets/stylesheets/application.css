@@ -55,6 +55,14 @@ header h1 a, header h1 a:active, header h1 a:visited, header h1 a:hover {
   text-decoration: none;
   border: none;
 }
+
+li .id {
+  float: left;
+  
+  
+  
+}
+
 h2 { 
   font-size: 24px; 
   line-height: 48px; 

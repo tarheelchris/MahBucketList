@@ -11,28 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605194729) do
+ActiveRecord::Schema.define(:version => 20120609032411) do
 
   create_table "items", :force => true do |t|
     t.string   "title"
     t.text     "details"
-    t.integer  "list_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.boolean  "complete"
   end
 
-  create_table "lists", :force => true do |t|
-    t.integer  "user_id"
+  create_table "list_item", :force => true do |t|
     t.integer  "item_id"
-    t.string   "title"
+    t.integer  "list_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
-  create_table "lists_items", :force => true do |t|
+  create_table "list_items", :force => true do |t|
     t.integer  "item_id"
     t.integer  "list_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "lists", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -42,7 +47,6 @@ ActiveRecord::Schema.define(:version => 20120605194729) do
     t.string   "last_name"
     t.string   "email"
     t.string   "password_digest"
-    t.integer  "list_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
   end
