@@ -40,8 +40,9 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
+    @list = List.find(params[:list_id])
     @item = Item.new(params[:item])
-
+    @list.items << @item
     respond_to do |format|
       if @item.save
         format.html { redirect_to list_items_url, notice: 'Item was successfully created.' }

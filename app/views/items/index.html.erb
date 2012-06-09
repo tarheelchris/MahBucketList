@@ -11,7 +11,7 @@
     <th></th>
   </tr>
 
-<% @items.each do |item| %>
+<% @current_user.lists.find(params[:list_id]).items.each do |item| %>
   <tr>
     <td><%= item.title %></td>
     <td><%= item.details %></td>
