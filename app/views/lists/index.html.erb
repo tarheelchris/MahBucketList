@@ -1,19 +1,13 @@
 <% if @current_user %>
-<h1><%= @current_user.first_name %>'s lists</h1>
+<h1><%= @current_user.first_name.capitalize %>'s lists</h1>
 
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>User</th>
-    <th>Item</th>
-  </tr>
-
-<% @current_user.lists.each do |list| %>
-    <%= link_to list.title, list_url(list) %>
+<ul>
+  <% @current_user.lists.each do |list| %>
+  <li>
+    <%= link_to list.title, list_items_url(list) %>
    <% end %>
-</table>
+  </li>
+</ul>
 <% end %>
-<br />
 
 <%= link_to 'New List', new_list_path %>

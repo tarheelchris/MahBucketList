@@ -55,13 +55,10 @@ header h1 a, header h1 a:active, header h1 a:visited, header h1 a:hover {
   text-decoration: none;
   border: none;
 }
-
-li .id {
+/*
+nav li {
   float: left;
-  
-  
-  
-}
+}*/
 
 h2 { 
   font-size: 24px; 
@@ -75,22 +72,22 @@ button {
   background: #090;
   color: #FFF;
 }
-header ul {
+/*header ul {
   overflow:hidden;
   margin-left: 0px;
   padding-left: 0px;
-}
+}*/
 
-header ul li {
+/*header ul li {
 //  display: inline;
   float: left;
-}
-
+}*/
+/*
 header ul li  {
   margin-left: 20px;
   display: block;
   text-align: right;
-}
+}*/
 
 table {
   width: 100%;

@@ -1,10 +1,11 @@
-<h1><%#= User.first_name %>'s Bucket List</h1>
+<h1><%= @current_user.first_name.capitalize %>'s Bucket List</h1>
+
+<h3><%= @current_user.lists.find(params[:list_id]).title %> Bucket List</h3>
 
 <table>
   <tr>
     <th>Title</th>
     <th>Details</th>
-    <th>List</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,15 +15,13 @@
   <tr>
     <td><%= item.title %></td>
     <td><%= item.details %></td>
-    <td><%= item.list_id %></td>
-    <td><%= link_to 'Show', item %></td>
-    <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%#= link_to 'Show', item %></td>
+    <td><%#= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%#= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-<% if session[:uid].present? %>
-	<%= link_to 'New Item', new_item_path %>
-<% end %>
+<br>
+	<%= link_to 'Add New Item', new_list_item_url %> |
+	<%= link_to 'Return to lists', root_url %>
