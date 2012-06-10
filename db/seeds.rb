@@ -8,9 +8,9 @@ if Rails.env.development?
   
   i = Item.create title: "Climb Mount Everest", details:"Before my 50th birthday, I want to climb mount everest naked."
   
-  u = User.create first_name: "Jeff", last_name: "Cohen", email: 'jcohen@codeacademy.org', password: 'hockey'
-  # User.create first_name: "Paul", last_name: "Wu", email: 'paul@codeacademy.org', password: 'hockey', list_id:2
-  # User.create first_name: "Chris", last_name: "Liang", email: 'chris@codeacademy.org', password: 'hockey', list_id:3
+  u = User.create first_name: "Jeff", last_name: "Cohen", email: 'jeff@codeacademy.org', password: 'hockey'
+  User.create first_name: "Paul", last_name: "Wu", email: 'paul@codeacademy.org', password: 'hockey'
+  User.create first_name: "Chris", last_name: "Liang", email: 'chris@codeacademy.org', password: 'hockey'
   
   l = List.create title: "#{u.first_name}\'s Bucket List", user_id: u.id
 

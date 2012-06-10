@@ -13,12 +13,18 @@
 
 <% @current_user.lists.find(params[:list_id]).items.each do |item| %>
   <tr>
+    <% if item.image_url.to_s.present? %>
+      <td><%= image_tag item.image_url.to_s %></td>
+    <% else %>
+      <td></td>
+    <% end %>
     <td><%= link_to item.title, list_item_url(:list_id => params[:list_id], :id => item.id) %></td>
     <td><%= item.details %></td>
-    <td><%#= link_to 'Edit', edit_item_path(item) %></td>
+    <td><%= link_to 'Edit', edit_list_item_url(:list_id => params[:list_id] , :id => item.id) %></td>
     <td><%#= link_to 'Destroy', item, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
-<% end %>
+  <% end %>
+
 </table>
 
 <br>

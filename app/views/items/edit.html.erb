@@ -2,17 +2,6 @@
 
 <%= form_for(@item, :url => list_item_url(:list_id => params[:list_id],:id => params[:id])) do |f| %>
  
-<!-- <%# if @current_user.lists.find(params[:list_id]).items.errors.any? %>
-    <div id="error_explanation">
-      <h2><%#= pluralize(@current_user.lists.find(params[:list_id]).items.errors.count, "error") %> prohibited this item from being saved:</h2>
-
-      <ul>
-      <%# @current_user.lists.find(params[:list_id]).items.errors.full_messages.each do |msg| %>
-        <li><%#= msg %></li>
-      <%# end %>
-      </ul>
-    </div>
-  <%# end %> -->
 
 <h3><%= @current_user.lists.find(params[:list_id]).title %> Bucket List</h3>
 
@@ -24,6 +13,12 @@
     <%= f.label :details %><br />
     <%= f.text_area :details %>
   </div>
+  
+  <p>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %><br />
+  </p>
+  
 
   <div class="actions">
     <%= f.submit %>
