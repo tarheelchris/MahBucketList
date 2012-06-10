@@ -13,7 +13,8 @@ class ItemsController < ApplicationController
   # GET /items/1
   # GET /items/1.json
   def show
-    @item = Item.find(params[:id])
+     @list = List.find(params[:list_id])
+     @item = @list.items.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -57,11 +58,12 @@ class ItemsController < ApplicationController
   # PUT /items/1
   # PUT /items/1.json
   def update
+    @list = List.find(params[:list_id])
     @item = Item.find(params[:id])
 
     respond_to do |format|
       if @item.update_attributes(params[:item])
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
+        format.html { redirect_to list_items_url, notice: 'Item was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

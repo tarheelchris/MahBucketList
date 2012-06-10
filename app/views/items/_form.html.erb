@@ -12,7 +12,7 @@
     </div>
   <%# end %> -->
 
-<h2><%= @list.title %> List</h2>
+<h3><%= @current_user.lists.find(params[:list_id]).title %> Bucket List</h3>
 
   <div class="field">
     <%= f.label :title %><br />
