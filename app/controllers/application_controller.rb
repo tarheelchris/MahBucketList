@@ -9,4 +9,17 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def require_correct_user
+    list = List.find(params[:id])
+    if list.user != @current_user
+      redirect_to root_url, notice: "Nice Try"
+    end   
+  end
+  
+  def require_sign_in
+    @user = User.find_by_id(session[:uid])
+    if @user.nil?
+      redirect_to new_session_url, notice: "Please sign in first"
+    end
+  end
 end

@@ -1,6 +1,11 @@
 class ListsController < ApplicationController
   # GET /lists
   # GET /lists.json
+  
+  before_filter :require_sign_in, :only => :new
+  # before_filter :require_correct_user
+  
+
   def index
     @lists = List.all
 
