@@ -4,9 +4,10 @@
 
 <table>
   <tr>
+    <th></th>
     <th>Title</th>
     <th>Details</th>
-    <th></th>
+    <th>Status</th>
     <th></th>
     <th></th>
   </tr>
@@ -18,8 +19,15 @@
     <% else %>
       <td></td>
     <% end %>
+    
+    <% if item.complete_status == "true" %>
+    <td><%= link_to item.title.upcase, list_item_url(:list_id => params[:list_id], :id => item.id) %></td>
+    <% else %>
     <td><%= link_to item.title, list_item_url(:list_id => params[:list_id], :id => item.id) %></td>
+    <% end %>
     <td><%= item.details %></td>
+    <td><%= link_to item.complete_status.to_s %></td>
+    
     <td><%= link_to 'Edit', edit_list_item_url(:list_id => params[:list_id] , :id => item.id) %></td>
     <td><%= link_to 'Delete', list_item_url(:list_id => params[:list_id], :id => item.id), confirm: 'Are you sure?', method: :delete %></td>
   </tr>
