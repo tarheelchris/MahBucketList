@@ -6,7 +6,7 @@ gem 'rails', '3.2.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do 
-  # gem 'thin'
+  gem 'thin'
   gem 'sqlite3', '1.3.5'
   gem 'quiet_assets'
 end
