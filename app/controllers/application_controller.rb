@@ -10,10 +10,14 @@ class ApplicationController < ActionController::Base
   end
   
   def require_correct_user
-    list = List.find(params[:id])
-    if list.user != @current_user
-      redirect_to root_url, notice: "Nice Try"
-    end   
+    if List.find(params[:id])
+      list = List.find(params[:id])
+        if list.user != @current_user
+        redirect_to root_url, notice: "Nice Try"
+        end
+    else
+      redirect_to new_user_url, notice: "Bucketlist does not exist" 
+    end 
   end
   
   def require_sign_in
