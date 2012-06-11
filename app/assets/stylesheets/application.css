@@ -1,175 +1,206 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
-*/
+/*** RESET ***/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, hr, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  background: transparent;
+  border: 0;
+  font-size: 100%;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+}
+a {
+  text-decoration: none;
+}
+*:focus {
+  outline: 1;
+}
+article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+nav ul {
+  list-style: none;
+}
+ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+input, select {
+  vertical-align: middle;
+}
+
+/*Global*/
 
 body {
-  font-family: "Helvetica";
+  background: #D6D6D6;
+  font: 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.container {
+  background: #fff;
+     -moz-border-radius: 5px;
+       -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
   margin: 20px auto;
+  padding-bottom: 20px;
   width: 960px;
-  font-size: 18px;
-  line-height: 29px;
-  background: #EEE;
 }
 
-#notice {
-  background: #F9FF8A;
-}
-#container {
-  background: #FFF;
-  padding: 12px;
-  padding-bottom: 48px;
-  border: solid 1px #BBB;
-}
-
+/*Header*/
 header {
-  margin-bottom: 12px;
-  border-bottom: solid 4px #000;
-  line-height: 24px;
-  padding: 6px;
-  background: #FFF;
+  padding: 20px;
+  height: 50px;
 }
-
-header p {
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 32px;
-}
-
 header h1 {
-  font-size: 32px;
-  line-height: 48px;
-}
-
-header h1 a, header h1 a:active, header h1 a:visited, header h1 a:hover {
-  color: #000;
-  text-decoration: none;
-  border: none;
-}
-/*
-nav li {
   float: left;
-}*/
-
-h2 { 
-  font-size: 24px; 
-  line-height: 48px; 
-  margin-bottom: 12px;
-//  border-bottom: solid 2px #009;
 }
 
-button {
-  font-size: 16px;
-  background: #090;
-  color: #FFF;
-}
-/*header ul {
-  overflow:hidden;
-  margin-left: 0px;
-  padding-left: 0px;
-}*/
-
-/*header ul li {
-//  display: inline;
-  float: left;
-}*/
-/*
-header ul li  {
-  margin-left: 20px;
-  display: block;
-  text-align: right;
-}*/
-
-table {
-  width: 100%;
-  border-top: solid 1px #000;
-  margin-top: 24px;
-}
-table, td, th  {
-  border-collapse: collapse;
-  padding: 12px;
+header h1 a {
+  color: #275b8c;
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 700;
 }
 
-th {
-//  border-top: solid 2px #009;
-}
-tr {
-  border-bottom: solid 1px #666;
-}
-td {
-  color: #333;
-  text-align: center;
+a #ListTitle {
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 700;
 }
 
-nav { 
+header ul {
   float: right;
 }
-
-#content {
-  margin-top: 24px;
-  padding: 6px;
-  background: #FFF;
+header li {
+  float: left;
+	padding: 4px 10px; 
 }
-
-#search label {
-  font-size: 18px;
-  margin-right: 12px;
-  padding: 6px 0px;
+.btn {
+  background: -webkit-linear-gradient(top, #f4f4f4, #ddd);
+  border: 1px solid #ccc;
+     -moz-border-radius: 5px;
+       -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  padding: 4px 10px;
 }
-#search input {
-  font-size: 16px;
-  padding: 6px;
+header .btn {
+  margin-left: 20px;
 }
+/*Nav */
 
-footer {
-  margin-top: 12px;
-//  border-top: solid 2px #900;
-  color: #666;
-  font-style: italic;
-  font-size: 14px;
+nav {
+  background: -webkit-linear-gradient(top, #f4f4f4, #ddd);
+  border: 1px solid #ccc;
+  border-width: 1px 0;
+  height: 40px;
+  line-height: 40px;
 }
-
-
-a, a:visited, a:active {
-  color: blue;
-  text-decoration: none;
-}
-
-a:hover {
-  border-bottom: dotted 1px blue;
+nav li {
+  float: left;
+  margin: 0 20px;
 }
 
-#help ol {
-  margin: 0;
-  padding-left: 40px;
-  margin-bottom: 12px;
+
+/*ASIDE*/
+
+aside {
+  float: left;
+  margin: 20px 0 0 20px;
+}
+.box {
+  border: 1px solid #ccc;
+     -moz-border-radius: 5px;
+       -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  width: 200px;
 }
 
-#help p {
-  line-height: 42px;
+section {
+  border: 1px solid #ccc;
+     -moz-border-radius: 5px;
+       -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  float: right;
+  margin: 20px 20px 0 0;
+  width: 697px;
 }
 
-#help span {
-  color: #008;
-  font-style: italic;
-}
-#ground_rules {
-  border-top: solid 1px #444;
+
+.clear {
+  clear: both;
 }
 
-#flight_info {
- border: dotted 2px green; 
- padding: 6px;
+.box h2 {
+  background: -webkit-linear-gradient(top, #f4f4f4, #ddd);
+  border-bottom: 1px solid #ccc;
+  padding: 4px 10px;
 }
+.box form {
+  padding: 10px;
+}
+.box label {
+  font-weight: bold;
+}
+.box input {
+  display: block;
+}
+.box .checkboxes input {
+  display: inline;
+}
+.box .checkboxes label {
+  font-weight: normal;
+}
+.box strong {
+  display: block;
+}
+
+
+section table {
+  width: 100%;
+}
+section th {
+  background: -webkit-linear-gradient(top, #f4f4f4, #ddd);
+  border-bottom: 1px solid #ccc;
+  padding: 4px 10px;
+}
+section td {
+  background: -webkit-linear-gradient(top, #eee, #fff);
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+section tr:hover td {
+  background: pink;
+}
+section a {
+  color: red;
+}
+section a:hover {
+  background: -webkit-linear-gradient(top, red, orange);
+  color: #fff;
+}
+
+
 
 
 
