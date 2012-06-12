@@ -10,8 +10,8 @@ class ApplicationController < ActionController::Base
   end
   
   def require_correct_user
-    if List.find(params[:id])
-      list = List.find(params[:id])
+    if List.find_by_id(params[:id])
+      list = List.find_by_id(params[:id])
         if list.user != @current_user
         redirect_to root_url, notice: "Nice Try"
         end

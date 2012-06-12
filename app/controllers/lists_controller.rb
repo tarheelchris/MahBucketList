@@ -3,7 +3,7 @@ class ListsController < ApplicationController
   # GET /lists.json
   
   before_filter :require_sign_in, :except => :index
-  before_filter :require_correct_user, :except => :index
+  before_filter :require_correct_user, :except => [:index, :new, :create]
   
 
   def index
